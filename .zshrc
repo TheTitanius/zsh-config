@@ -19,7 +19,7 @@ autoload -U vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '[%b]❭'
 
-#настройка история
+#настройка истории
 setopt appendhistory
 ANTIGEN_PATH="$HOME/.config/antigen.zsh"
 HISTFILE="$HOME/.zsh_history"
@@ -46,6 +46,7 @@ ZSH_HIGHLIGHT_STYLES[command]=fg=green,bold
 ZSH_HIGHLIGHT_STYLES[path]=bold
 ZSH_HIGHLIGHT_STYLES[builtin]=fg=green,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=green,bold,underline
+ZSH_HIGHLIGHT_STYLES[alias]=fg=green,bold
 
 #псевдонимы
 alias ls='ls --color=auto'
