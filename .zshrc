@@ -1,3 +1,6 @@
+#выделяет текст подсказки для не одноцветного фона
+IS_PLAIN_BACKGROUND=false
+
 #горячие клавиши
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
@@ -53,7 +56,12 @@ alias ls='ls --color=auto'
 
 #вид подсказки
 setopt PROMPT_SUBST
-PROMPT=$'%{\e[40m\e[1;92m%}%n@%m%{\e[0m%}%{\e[100m\e[1;96m%}:%~%{\e[0m\e[m%}%{\e[100m\e[1;96m%}❭%{\e[0m\e[m%}%{\e[103m\e[1;91m%}${vcs_info_msg_0_}%{\e[0m\e[m%} '
+
+if [ "$IS_PLAIN_BACKGROUND" = true ]; then
+    PROMPT=$'%{\e[1;92m%}%n@%m%{\e[0m%}%{\e[1;96m%}:%~%{\e[0m\e[m%}%{\e[1;96m%}❭%{\e[0m\e[m%}%{\e[1;91m%}${vcs_info_msg_0_}%{\e[0m\e[m%} '
+else
+    PROMPT=$'%{\e[40m\e[1;92m%}%n@%m%{\e[0m%}%{\e[100m\e[1;96m%}:%~%{\e[0m\e[m%}%{\e[100m\e[1;96m%}❭%{\e[0m\e[m%}%{\e[103m\e[1;91m%}${vcs_info_msg_0_}%{\e[0m\e[m%} '
+fi
 RPROMPT='%F{magenta}%T%f'
 
 #включение утилиты команда не найдена
