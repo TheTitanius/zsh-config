@@ -53,6 +53,7 @@ ZSH_HIGHLIGHT_STYLES[alias]=fg=green,bold
 
 #псевдонимы
 alias ls='ls --color=auto'
+alias df='df -h'
 
 #вид подсказки
 setopt PROMPT_SUBST
